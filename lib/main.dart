@@ -28,21 +28,48 @@ class MyProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Profil Mahasiswa PENS"),
+        title: const Text(
+          "Profil Mahasiswa PENS",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.purple,
+        centerTitle: true,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "Nama: Muhammad Dikqi Fathomi",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            const CircleAvatar(
+              radius: 60,
+              backgroundImage: AssetImage('assets/profil.jpeg'), 
             ),
-            const SizedBox(height: 10),
-            const Text(
-              "NIM: 3123521047",
-              style: TextStyle(fontSize: 20),
+            const SizedBox(height: 20),
+            Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    const Text(
+                      "Muhammad Dikqi Fathomi",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.purple,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      "NIM: 3123521047",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
